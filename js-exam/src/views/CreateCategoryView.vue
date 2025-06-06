@@ -78,7 +78,6 @@ const handleSubmit = async () => {
 
 
 <style scoped>
-/* Using generic class names for potentially shared form styles */
 .create-view {
   display: flex;
   justify-content: center;
