@@ -1,8 +1,8 @@
-# Vue.js Todo Management App
+# To Do List Management Application
 
 A modern and responsive single-page application for task management, built with Vue.js and TypeScript. This project was developed to fulfill the requirements of my TalTech JavaScript course exam.
 
-It features a full authentication flow, complete CRUD (Create, Read, Update, Delete) functionality for tasks, and dynamic filtering, all interacting with a provided REST API.
+It features a full authentication flow, complete CRUD functionality for tasks, and dynamic filtering, all interacting with a provided REST API.
 
 ---
 
