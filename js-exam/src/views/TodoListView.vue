@@ -387,6 +387,7 @@ const formatDate = (dateString?: string | null) => {
   font-size: 1rem;
   font-weight: 600;
   transition: background-image 0.3s ease, transform 0.1s ease;
+  cursor: pointer;;
 }
 .add-task-submit-btn:hover {
   background-image: linear-gradient(to right, #4338ca 0%, #6d28d9 100%);
