@@ -92,6 +92,8 @@ const handleReset = () => {
 
 .container {
   max-width: 800px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .view-title {
