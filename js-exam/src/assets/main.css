@@ -1,0 +1,44 @@
+html {
+  box-sizing: border-box;
+  height: 100%; /* Make html element take full viewport height */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default browser padding */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+  color: #2c3e50; /* A common dark grey for text */
+  background-color: #f4f7f6; /* Light grey background for the entire page */
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  display: flex; /* Added to help #app fill height */
+  flex-direction: column; /* Added to help #app fill height */
+}
+
+/* Ensure the root Vue app element can expand */
+#app {
+  flex-grow: 1; /* Allows #app to take available space in body */
+  display: flex; /* Make #app a flex container for App.vue's root div */
+  flex-direction: column; /* Stack App.vue's content vertically */
+}
+
+/* Remove any default Vite/Vue welcome page styles from here if they exist,
+   unless you are specifically using them. */
+
+/* Example: Basic link styling (optional, can be in App.vue or here) */
+a {
+  color: #007bff; /* Bootstrap primary blue, adjust to your theme */
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
