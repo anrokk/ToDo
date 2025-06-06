@@ -20,11 +20,11 @@ onMounted(() => {
 
 const handleSubmit = async () => {
     if (!priorityName.value.trim()) {
-        todoStore.error = "Priority name cannot be empty.";
+        todoStore.error = "Priority field cannot be empty.";
         return;
     }
     if (prohibitedWordStore.isProhibited(priorityName.value)) {
-        todoStore.error = "Priority name contains prohibited words. Please choose a different name.";
+        todoStore.error = "Priority field contains prohibited words. Please choose a different name.";
         return;
     }
 

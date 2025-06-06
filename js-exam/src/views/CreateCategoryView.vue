@@ -20,12 +20,12 @@ onMounted(() => {
 
 const handleSubmit = async () => {
     if (!categoryName.value.trim()) {
-        todoStore.error = "Category name is required.";
+        todoStore.error = "Category field is required.";
         return;
     }
 
     if (prohibitedWordStore.isProhibited(categoryName.value)) {
-        todoStore.error = "Category name contains prohibited words.";
+        todoStore.error = "Category field contains prohibited words. Please choose a different name.";
         return;
     }
 
