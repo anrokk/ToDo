@@ -7,6 +7,7 @@ import TodoListView from '@/views/TodoListView.vue'
 import { useAuthStore } from '@/stores/auth'
 import CreateCategoryView from '@/views/CreateCategoryView.vue'
 import CreatePriorityView from '@/views/CreatePriorityView.vue'
+import AdminProhibitedWordsView from '@/views/AdminProhibitedWordsView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -43,6 +44,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'createPriority',
     component: CreatePriorityView,
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/admin/prohibited-words',
+    name: 'adminProhibitedWords',
+    component: AdminProhibitedWordsView,
+    meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]
 
@@ -59,16 +66,23 @@ router.beforeEach((to, from, next) => {
     authStore.initializeAuthFromStorage();
   }
 
+  const requiresAdmin = to.meta.requiresAdmin as boolean;
   const requiresAuth = to.meta.requiresAuth as boolean;
   const requiresGuest = to.meta.requiresGuest as boolean;
 
-  if (requiresAuth && !authStore.isAuthenticated) {
-    next({ name: 'login', query: { redirect: to.fullPath } });
-  } else if (requiresGuest && authStore.isAuthenticated) {
-    next({ name: 'home' });
-  } else {
-    next();
+  if (requiresAdmin && !authStore.isAdmin) {
+    return next({ name: 'home' });
   }
-})
+
+  if (requiresAuth && !authStore.isAuthenticated) {
+    return next({ name: 'login', query: { redirect: to.fullPath } });
+  }
+
+  if (requiresGuest && authStore.isAuthenticated) {
+    return next({ name: 'todos' });
+  }
+
+  next();
+});
 
 export default router

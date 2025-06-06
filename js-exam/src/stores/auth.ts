@@ -5,6 +5,10 @@ import type { LoginCredentials, RegisterInfo, JwtResponse, UserProfile, DecodedT
 import router from "@/router";
 import { jwtDecode } from "jwt-decode";
 
+
+const ADMIN_EMAIL = ["andreas@admin.com"]; 
+
+
 export const useAuthStore = defineStore("auth", {
     state: () => ({
         token: localStorage.getItem("todoAppToken") || null as string | null,
@@ -25,6 +29,12 @@ export const useAuthStore = defineStore("auth", {
         },
         bearerToken: (state) => {
             return state.token ? `Bearer ${state.token}` : null;
+        },
+        isAdmin(state): boolean {
+            if (state.user && state.user.email) {
+                return ADMIN_EMAIL.includes(state.user.email.toLowerCase());
+            }
+            return false;
         }
     },
 

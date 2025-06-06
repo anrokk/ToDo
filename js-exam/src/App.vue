@@ -8,6 +8,7 @@ const authStore = useAuthStore();
 const prohibitedWordStore = useProhibitedWordStore();
 
 const isAuthenticated = computed(() => authStore.isAuthenticated);
+const isAdmin = computed(() => authStore.isAdmin);
 const userDisplayName = computed(() => authStore.userDisplayName);
 
 onMounted(() => {
@@ -30,6 +31,7 @@ const handleLogout = () => {
         <RouterLink to="/">Home</RouterLink>
         <template v-if="isAuthenticated">
           <RouterLink to="/todos">My ToDo's</RouterLink>
+          <RouterLink v-if="isAdmin" to="/admin/prohibited-words" class="admin-link">Admin</RouterLink>
           <span class="user-greeting" v-if="authStore.user">Hi, {{ userDisplayName }}!</span>
           <button @click="handleLogout" class="logout-button">Logout</button>
         </template>
@@ -58,24 +60,22 @@ const handleLogout = () => {
 }
 
 .app-header {
-  /* background-color: #ffffff; */ /* Old white header */
-  background-image: linear-gradient(to right, #4f46e5 0%, #7c3aed 100%); /* New Gradient */
-  color: #ffffff; /* White text for contrast on gradient */
+  background-image: linear-gradient(to right, #4f46e5 0%, #7c3aed 100%); 
+  color: #ffffff; 
   padding: 0.75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* border-bottom: 1px solid #e2e8f0; */ /* Border might not be needed with gradient */
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Slightly stronger shadow for depth */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
 }
 
 .app-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ffffff; /* Ensure title is white */
+  color: #ffffff; 
   text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ const handleLogout = () => {
 .navigation-links .user-greeting {
   margin-left: 1.25rem;
   text-decoration: none;
-  color: #e0e0ff; /* Lighter purple/white for links for better readability on gradient */
+  color: #e0e0ff; 
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -92,36 +92,36 @@ const handleLogout = () => {
 }
 
 .navigation-links a:hover {
-  color: #ffffff; /* White on hover */
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle background highlight on hover */
+  color: #ffffff; 
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .navigation-links .router-link-exact-active {
   color: #ffffff;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly more prominent highlight for active */
+  background-color: rgba(255, 255, 255, 0.2); 
 }
 
 .navigation-links button.logout-button {
   background-color: transparent;
-  border: 1px solid #ffc107; /* Yellow/gold border for contrast */
-  color: #ffc107; /* Yellow/gold text */
+  border: 1px solid #ffc107; 
+  color: #ffc107; 
   cursor: pointer;
   font-weight: 500;
-  padding: 0.4rem 0.8rem; /* Match link padding */
-  border-radius: 6px; /* Match link radius */
+  padding: 0.4rem 0.8rem; 
+  border-radius: 6px; 
   margin-left: 1.25rem;
   font-size: 0.9rem;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .navigation-links button.logout-button:hover {
-  background-color: #ffc107; /* Yellow/gold background on hover */
-  color: #2d3748; /* Dark text on hover */
+  background-color: #ffc107; 
+  color: #2d3748; 
 }
 
 .user-greeting {
-  color: #e0e0ff; /* Lighter purple/white */
+  color: #e0e0ff; 
   padding-right: 0;
   font-size: 0.9rem;
 }
@@ -144,14 +144,24 @@ const handleLogout = () => {
 .app-footer {
   text-align: center;
   padding: 1.5rem 1rem;
-  /* background-color: #ffffff; */ /* Old white footer */
-  background-image: linear-gradient(to right, #4f46e5 0%, #7c3aed 100%); /* New Gradient */
-  color: #e0e0ff; /* Lighter purple/white for text */
-  /* border-top: 1px solid #e2e8f0; */ /* Border might not be needed */
+  background-image: linear-gradient(to right, #4f46e5 0%, #7c3aed 100%); 
+  color: #e0e0ff; 
   font-size: 0.875rem;
   width: 100%;
   box-sizing: border-box;
   margin-top: auto;
   flex-shrink: 0;
+}
+
+.admin-link {
+    color: #f1c40f !important; 
+    font-weight: bold;
+}
+.admin-link:hover {
+    background-color: rgba(241, 196, 15, 0.1) !important;
+}
+.admin-link.router-link-exact-active {
+    background-color: #f1c40f !important;
+    color: #2c3e50 !important;
 }
 </style>
