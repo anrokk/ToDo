@@ -27,7 +27,7 @@ It features a full authentication flow, complete CRUD functionality for tasks, a
 
 ### Backend API
 
-This frontend application is built to consume the Todo API provided by TalTech.
+This frontend application is built to consume the API provided by the lecturer.
 
 -   **Swagger Documentation:** [https://taltech.akaver.com/swagger/index.html](https://taltech.akaver.com/swagger/index.html)
 
