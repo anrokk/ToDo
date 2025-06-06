@@ -86,8 +86,8 @@ export interface TodoTask {
     dueDt?: string | null;
     isCompleted: boolean;
     isArchived: boolean;
-    todoCategoryId: string | null;
-    todoPriorityId: string | null;
+    todoCategoryId: string;
+    todoPriorityId: string;
     syncDt: string;
     todoCategory?: TodoCategory | null;
     todoPriority?: TodoPriority | null;

@@ -8,6 +8,7 @@ import { useAuthStore } from '@/stores/auth'
 import CreateCategoryView from '@/views/CreateCategoryView.vue'
 import CreatePriorityView from '@/views/CreatePriorityView.vue'
 import AdminProhibitedWordsView from '@/views/AdminProhibitedWordsView.vue'
+import EditTaskView from '@/views/EditTaskView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -44,6 +45,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'createPriority',
     component: CreatePriorityView,
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/tasks/edit/:id',
+    name: 'editTask',
+    component: EditTaskView,
+    meta: { requiresAuth: true },
   },
   {
     path: '/admin/prohibited-words',

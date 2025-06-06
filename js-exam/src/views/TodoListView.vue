@@ -215,6 +215,7 @@ const formatDate = (dateString?: string | null) => {
                         <h5 class="card-title" :style="{ 'text-decoration': task.isCompleted ? 'line-through' : 'none' }">
                             {{ task.taskName }}
                         </h5>
+                        <RouterLink :to="{ name: 'editTask', params: { id: task.id } }" class="edit-task-link">✎</RouterLink>
                         <p class="card-text">
                             <small>Category: {{ getCategoryName(task.todoCategoryId!) }}</small><br/>
                             <small>Priority: {{ getPriorityName(task.todoPriorityId!) }}</small><br/>
@@ -539,4 +540,15 @@ const formatDate = (dateString?: string | null) => {
 @keyframes spinner-border {
   to { transform: rotate(360deg); }
 }
+
+.edit-task-link { 
+  font-size: 1rem; 
+  text-decoration: none; 
+  color: #6c757d; 
+  transition: color 0.2s ease; 
+}
+
+.edit-task-link:hover { 
+  color: #0d6efd; 
+  }
 </style>
