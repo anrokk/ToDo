@@ -88,13 +88,12 @@ const handleLogin = async () => {
 <style scoped>
 .login-view-wrapper {
   display: flex;
-  flex-direction: column; /* Stack content if needed, or just center */
-  justify-content: center; /* Vertically center if align-items is used on parent */
-  align-items: center;     /* Horizontally center */
-  flex-grow: 1; /* Make this wrapper take available space in App.vue's main-content */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;     
+  flex-grow: 1; 
   width: 100%;
-  /* background-color: #eef2f7; /* Light background moved to global body */
-  padding: 2rem; /* Padding for smaller screens */
+  padding: 2rem; 
   box-sizing: border-box;
 }
 

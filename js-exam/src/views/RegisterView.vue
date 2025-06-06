@@ -139,7 +139,6 @@ const handleRegister = async () => {
 </template>
 
 <style scoped>
-/* Styles adapted from the modern LoginView.vue */
 .register-view-wrapper {
   display: flex;
   flex-direction: column;
@@ -147,7 +146,6 @@ const handleRegister = async () => {
   align-items: center;
   flex-grow: 1;
   width: 100%;
-  /* background-color: #eef2f7; /* Global body background */
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -158,7 +156,7 @@ const handleRegister = async () => {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 480px; /* Slightly wider for more fields */
+  max-width: 480px; 
   text-align: center;
   border: 1px solid #e2e8f0;
 }
