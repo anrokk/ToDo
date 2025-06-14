@@ -16,7 +16,7 @@ It features a full authentication flow, complete CRUD functionality for tasks, a
 
 ### Tech Stack
 
--   **Framework:** Vue.js 3 (Composition API)
+-   **Framework:** Vue.js
 -   **Language:** TypeScript
 -   **Build Tool:** Vite
 -   **Routing:** Vue Router
