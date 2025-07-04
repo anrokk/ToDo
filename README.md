@@ -14,6 +14,25 @@ It features a full authentication flow, complete CRUD functionality for tasks, a
 -   **Customization:** Users can add their own categories and priorities for tasks.
 -   **Admin Panel:** A hidden UI for administrators to manage a client-side list of prohibited words.
 
+### Screenshots
+
+- Homepage
+  
+  <img width="1512" alt="Screenshot 2025-07-04 at 12 04 25" src="https://github.com/user-attachments/assets/f60ba8b5-010e-4f0f-884c-7fc36adfaf03" />
+
+- Add task form
+
+  <img width="1512" alt="Screenshot 2025-07-04 at 12 10 41" src="https://github.com/user-attachments/assets/4d371c8e-6ab2-4187-a353-45b52da42ef7" />
+
+- Task list
+
+  <img width="1512" alt="Screenshot 2025-07-04 at 12 11 50" src="https://github.com/user-attachments/assets/6aa6be52-39bd-48f9-83b1-d602df37832a" />
+
+- Filtering
+
+  <img width="1512" alt="Screenshot 2025-07-04 at 12 13 09" src="https://github.com/user-attachments/assets/d839289e-b3dc-4028-845b-2c87e60855c0" />
+  
+
 ### Tech Stack
 
 -   **Framework:** Vue.js
